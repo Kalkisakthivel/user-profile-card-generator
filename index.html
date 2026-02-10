@@ -6,33 +6,48 @@
 </head>
 <body>
 
-  <h1>User Profile Card Generator</h1>
+<h1 style="color:red">TEST FILE</h1>
 
-<div>
-  <h2>Enter Details</h2>
+<h2>Enter Details</h2>
 
-  <label>Name:</label><br>
-  <input type="text"><br><br>
+<label>Name:</label><br>
+<input type="text" id="nameInput"><br><br>
 
-  <label>Roll Number:</label><br>
-  <input type="text"><br><br>
+<label>Roll Number:</label><br>
+<input type="text" id="rollInput"><br><br>
 
-  <label>Bio:</label><br>
-  <textarea rows="4"></textarea>
-</div>
+<label>Bio:</label><br>
+<textarea id="bioInput" rows="4"></textarea>
 
 <hr>
 
-<div>
-  <h2>Profile Card Preview</h2>
+<h2>Profile Card Preview</h2>
 
-  <div>
-    <h3>Your Name</h3>
-    <p>Roll Number</p>
-    <p>Your bio will appear here</p>
-  </div>
-</div>
+<h3 id="namePreview">Your Name</h3>
+<p id="rollPreview">Roll Number</p>
+<p id="bioPreview">Your bio will appear here</p>
 
+<script>
+  const nameInput = document.getElementById("nameInput");
+  const rollInput = document.getElementById("rollInput");
+  const bioInput = document.getElementById("bioInput");
+
+  const namePreview = document.getElementById("namePreview");
+  const rollPreview = document.getElementById("rollPreview");
+  const bioPreview = document.getElementById("bioPreview");
+
+  nameInput.addEventListener("input", function () {
+    namePreview.innerText = nameInput.value || "Your Name";
+  });
+
+  rollInput.addEventListener("input", function () {
+    rollPreview.innerText = rollInput.value || "Roll Number";
+  });
+
+  bioInput.addEventListener("input", function () {
+    bioPreview.innerText = bioInput.value || "Your bio will appear here";
+  });
+</script>
 
 </body>
 </html>
